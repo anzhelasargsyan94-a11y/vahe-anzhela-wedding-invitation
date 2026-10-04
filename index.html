@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Վահե և Անժելա — Հարսանեկան հրավիրատոմս</title>
+<meta name="description" content="Հարսանյաց հրավեր_Վահե և Անժելա">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Հարսանյաց հրավեր_Վահե և Անժելա">
+<meta property="og:description" content="19 նոյեմբերի 2026">
+<meta property="og:image" content="__OG_IMAGE_URL__">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Հարսանյաց հրավեր_Վահե և Անժելա">
+<meta name="twitter:description" content="19 նոյեմբերի 2026">
+<meta name="twitter:image" content="__OG_IMAGE_URL__">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Serif+Armenian:wght@300;400;500;600;700&family=Noto+Sans+Armenian:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4ecdf;
+    --paper: #fff9f0;
+    --gold: #b08a55;
+    --gold-deep: #97703c;
+    --olive: #78816b;
+    --olive-deep: #576149;
+    --ink: #2f312b;
+    --muted: #606158;
+    --line: rgba(176,138,85,.32);
+    --shadow: 0 20px 60px rgba(72,56,33,.14);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    font-family: "Noto Sans Armenian", sans-serif;
+    background:
+      radial-gradient(circle at top left, rgba(120,129,106,.18), transparent 22%),
+      radial-gradient(circle at bottom right, rgba(176,138,85,.12), transparent 25%),
+      linear-gradient(180deg, #f5efe4, #efe5d5);
+    overflow-x: hidden;
+  }
+
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .section { padding: 72px 0; }
+  .card {
+    background: rgba(255,249,240,.95);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    border-radius: 30px;
+  }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: 12px;
+    font-weight: 600;
+    color: #7f6134;
+    text-align: center;
+    margin-bottom: 14px;
+    text-shadow: 0 1px 10px rgba(255,255,255,.65);
+  }
+  .title {
+    margin: 0;
+    text-align: center;
+    font-family: "Noto Serif Armenian", serif;
+    font-weight: 500;
+    font-size: clamp(28px, 5vw, 42px);
+    color: var(--olive-deep);
+  }
+  .orn {
+    width: 84px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 18px auto 24px;
+  }
+
+  /* Envelope */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #f1e7d7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: opacity .9s ease, visibility .9s ease;
+  }
+  .overlay.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+  .overlay-wrap { width: min(92vw, 470px); text-align: center; }
+  .open-title {
+    font-family: "Noto Serif Armenian", serif;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--olive-deep);
+    font-size: 32px;
+    margin: 24px 0 0;
+    letter-spacing: .01em;
+    transform: skewX(-2deg);
+  }
+  .envelope {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 10 / 7;
+    margin: 0 auto;
+    cursor: pointer;
+    perspective: 1600px;
+    filter: drop-shadow(0 28px 42px rgba(65,50,31,.18));
+  }
+  .env-body {
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #ead8bb, #d9c19a);
+    border: 1px solid rgba(152,111,58,.36);
+  }
+  .env-body::before {
+    content: "";
+    position: absolute;
+    inset: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.28);
+  }
+  .env-inner {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    top: 28px;
+    bottom: 24px;
+    background: linear-gradient(180deg, #fffdf9, #f7efe3);
+    border-radius: 12px;
+    border: 1px solid rgba(176,138,85,.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    z-index: 1;
+    transform: translateY(36px);
+    opacity: 0;
+    transition: transform 1s cubic-bezier(.22,.9,.2,1), opacity .8s ease;
+  }
+  .env-mini {
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .env-names {
+    font-family: "Noto Serif Armenian", serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 34px;
+    color: #4f5d46;
+    line-height: 1.08;
+    letter-spacing: 0;
+    margin: 10px 0 8px;
+    white-space: nowrap;
+    text-shadow:
+      0 2px 4px rgba(255,255,255,.92),
+      0 0 10px rgba(255,255,255,.72);
+  }
+  .env-date {
+    font-family: "Noto Serif Armenian", serif;
+    color: var(--muted);
+    font-size: 15px;
+    letter-spacing: .08em;
+  }
+  .env-front {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    clip-path: polygon(0 33%, 50% 72%, 100% 33%, 100% 100%, 0 100%);
+    background: linear-gradient(180deg, #e6d1ae, #d4ba8f);
+    border: 1px solid rgba(152,111,58,.32);
+  }
+  .env-left, .env-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50.5%;
+    z-index: 2;
+    background: linear-gradient(180deg, #ebdcc2, #d9c29d);
+  }
+  .env-left { left: 0; clip-path: polygon(0 0, 100% 50%, 0 100%); }
+  .env-right { right: 0; clip-path: polygon(100% 0, 0 50%, 100% 100%); }
+  .env-flap {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    transform-origin: top center;
+    background: linear-gradient(180deg, #f1e3ca, #ddc5a0);
+    clip-path: polygon(0 0, 100% 0, 50% 66%);
+    border: 1px solid rgba(152,111,58,.28);
+    transition: transform 1.05s cubic-bezier(.22,.9,.2,1);
+    backface-visibility: hidden;
+  }
+  .seal {
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    z-index: 6;
+    background:
+      url("assets/asset0.png") center/112% 112% no-repeat,
+      #f7e8c9;
+    border: 2px solid rgba(164,118,62,.30);
+    box-shadow:
+      0 10px 24px rgba(86,60,24,.20),
+      inset 0 0 0 3px rgba(255,255,255,.20);
+    transition: opacity .35s ease .1s;
+    overflow: hidden;
+}
+.seal span {
+    display: none !important;
+}
+  .envelope.open .env-flap { transform: rotateX(-180deg); }
+  .envelope.open .seal { opacity: 0; }
+  .envelope.open .env-inner { transform: translateY(-58px); opacity: 1; }
+
+  /* Hero */
+  .hero { padding: 34px 0 20px; }
+  .hero-card {
+    overflow: hidden;
+    border-radius: 34px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    box-shadow: var(--shadow);
+  }
+  .hero-art {
+    min-height: 690px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: -3%;
+    background:
+      linear-gradient(180deg, rgba(255,250,243,.08), rgba(255,250,243,.58)),
+      url('assets/asset1.png') center/cover no-repeat;
+    animation: floralFloat 18s ease-in-out infinite alternate;
+    transform-origin: center;
+    z-index: 0;
+  }
+  .hero-art::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 180px;
+    background: linear-gradient(180deg, transparent, rgba(255,248,239,.95));
+    z-index: 2;
+  }
+
+  .ribbon {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    opacity: .52;
+    background: linear-gradient(180deg, rgba(233,208,171,.82), rgba(204,170,121,.45), rgba(245,232,210,.2));
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.14);
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    filter: blur(.1px);
+  }
+  .ribbon.r1 {
+    width: 240px; height: 24px; left: 34px; top: 210px;
+    border-radius: 40px; transform: rotate(-18deg);
+    animation-name: ribbonWave1; animation-duration: 8s;
+  }
+  .ribbon.r2 {
+    width: 200px; height: 20px; right: 30px; top: 120px;
+    border-radius: 36px; transform: rotate(64deg);
+    animation-name: ribbonWave2; animation-duration: 9s;
+  }
+  .ribbon.r3 {
+    width: 270px; height: 24px; left: 250px; bottom: 82px;
+    border-radius: 38px; transform: rotate(10deg);
+    animation-name: ribbonWave3; animation-duration: 8.5s;
+  }
+
+  .leaf, .petal {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    transform-origin: center;
+  }
+
+  .leaf {
+    width: 18px; height: 44px;
+    background: linear-gradient(180deg, rgba(123,133,108,.95), rgba(146,155,132,.65));
+    border-radius: 70% 0 70% 0 / 70% 0 70% 0;
+    opacity: .55;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.12);
+    animation: leafSway 5.8s ease-in-out infinite;
+  }
+  .leaf.l1 { top: 126px; left: 170px; animation-delay: -1s; }
+  .leaf.l2 { top: 170px; right: 150px; transform: rotate(24deg); animation-delay: -3s; }
+  .leaf.l3 { bottom: 180px; left: 115px; transform: rotate(-14deg); animation-delay: -2.2s; }
+  .leaf.l4 { bottom: 128px; right: 185px; transform: rotate(18deg); animation-delay: -4.1s; }
+  .leaf.l5 { top: 290px; right: 75px; transform: rotate(-8deg); animation-delay: -5s; }
+
+  .petal {
+    width: 15px; height: 20px;
+    background: radial-gradient(circle at 35% 30%, rgba(255,251,245,.95), rgba(243,226,202,.88) 60%, rgba(226,197,157,.6));
+    border-radius: 70% 30% 65% 35% / 65% 35% 65% 35%;
+    opacity: .82;
+    filter: blur(.15px);
+    animation: petalDrift 8.5s linear infinite;
+  }
+  .petal.p1 { top: 140px; left: 54%; animation-delay: -2s; }
+  .petal.p2 { top: 220px; left: 72%; animation-delay: -6.5s; }
+  .petal.p3 { top: 270px; left: 38%; animation-delay: -4s; }
+  .petal.p4 { top: 110px; left: 27%; animation-delay: -8s; }
+  .petal.p5 { top: 320px; left: 61%; animation-delay: -1s; }
+  .petal.p6 { top: 180px; left: 84%; animation-delay: -9.2s; }
+
+  .hero-content {
+    width: 100%;
+    text-align: center;
+    padding: 250px 24px 96px;
+    position: relative;
+    z-index: 3;
+  }
+  .hero-names {
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(62px, 12vw, 98px);
+    line-height: .9;
+    color: #4f5d46;
+    text-shadow:
+      0 2px 4px rgba(255,255,255,.96),
+      0 0 16px rgba(255,255,255,.88),
+      0 1px 1px rgba(55,63,48,.18);
+    margin: 4px 0 16px;
+    animation: softRise 4.8s ease-in-out infinite alternate;
+  }
+  .hero-date {
+    font-family: "Noto Serif Armenian", serif;
+    color: #556048;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-shadow: 0 1px 10px rgba(255,255,255,.65);
+  }
+  .hero-btn {
+    display: inline-flex;
+    margin-top: 28px;
+    text-decoration: none;
+    color: var(--olive-deep);
+    border: 1px solid var(--gold);
+    background: rgba(255,255,255,.78);
+    border-radius: 999px;
+    padding: 13px 22px;
+    font-size: 13px;
+    position: relative;
+    z-index: 4;
+  }
+
+  .intro-card {
+    margin-top: -42px;
+    position: relative;
+    z-index: 5;
+    padding: 42px 24px;
+  }
+  .invite-message {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: "Noto Serif Armenian", serif;
+    font-size: 18px;
+    line-height: 2;
+    color: #58584f;
+  }
+  .invite-message strong { color: var(--ink); font-weight: 600; }
+  .invite-date-inline {
+    margin-top: 12px;
+    font-family: "Noto Serif Armenian", serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--gold-deep);
+    letter-spacing: .04em;
+  }
+
+  /* Timeline */
+  .timeline { display: grid; gap: 18px; margin-top: 30px; }
+  .event {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 20px;
+    padding: 25px;
+    border-radius: 26px;
+    border: 1px solid var(--line);
+    background: linear-gradient(180deg, rgba(255,251,245,.94), rgba(251,244,233,.94));
+    box-shadow: 0 8px 22px rgba(82,62,35,.06);
+  }
+  .event-time {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 40px;
+    line-height: 1;
+    color: var(--gold-deep);
+    align-self: start;
+    padding-top: 2px;
+  }
+  .event-kind {
+    text-transform: uppercase;
+    letter-spacing: .10em;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--olive);
+    margin-bottom: 8px;
+  }
+  .event h3 {
+    margin: 0 0 8px;
+    font-family: "Noto Serif Armenian", serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--olive-deep);
+    line-height: 1.35;
+    white-space: normal;
+  }
+  .event p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+  .map-link {
+    display: inline-flex;
+    margin-top: 14px;
+    text-decoration: none;
+    color: var(--olive-deep);
+    border: 1px solid rgba(176,138,85,.45);
+    background: #fffaf1;
+    border-radius: 999px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  /* Countdown */
+  .count-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    max-width: 720px;
+    margin: 36px auto 0;
+  }
+  .count-item {
+    border-radius: 24px;
+    background: linear-gradient(180deg, rgba(255,252,247,.96), rgba(247,238,225,.96));
+    border: 1px solid var(--line);
+    padding: 24px 12px;
+    text-align: center;
+    box-shadow: 0 8px 22px rgba(82,62,35,.05);
+  }
+  .count-num {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 46px;
+    line-height: 1;
+    color: var(--olive-deep);
+  }
+  .count-label { margin-top: 8px; color: var(--muted); font-size: 13px; }
+
+  /* RSVP */
+  .rsvp-card { padding: 36px 22px; }
+  .deadline {
+    text-align: center;
+    color: var(--olive-deep);
+    font-family: "Noto Serif Armenian", serif;
+    font-size: 18px;
+    margin: 8px 0 30px;
+    line-height: 1.7;
+  }
+  .form-grid {
+    max-width: 680px;
+    margin: 0 auto;
+    display: grid;
+    gap: 18px;
+  }
+  .field label {
+    display: block;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    letter-spacing: .03em;
+    font-weight: 500;
+  }
+  input[type="text"], input[type="number"] {
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid #d8c8af;
+    background: #fffdf8;
+    padding: 14px 16px;
+    font: inherit;
+    color: var(--ink);
+    outline: none;
+    -moz-appearance: textfield;
+  }
+  input[type=number]::-webkit-outer-spin-button,
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .vertical-choice {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .pill input { display: none; }
+  .pill span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    padding: 12px 16px;
+    border-radius: 18px;
+    border: 1px solid #d8c8af;
+    background: linear-gradient(180deg, #fffdf8, #fbf3e8);
+    color: var(--ink);
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 500;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
+    transition: .2s ease;
+  }
+  .pill input:checked + span {
+    background: linear-gradient(180deg, #6a755b, #57614a);
+    border-color: #57614a;
+    color: white;
+    box-shadow: 0 10px 24px rgba(87,97,74,.18);
+  }
+  .submit-btn {
+    display: block;
+    width: 100%;
+    max-width: 270px;
+    margin: 8px auto 0;
+    border: none;
+    border-radius: 999px;
+    padding: 15px 22px;
+    cursor: pointer;
+    color: white;
+    font: inherit;
+    font-weight: 600;
+    background: linear-gradient(180deg, #6b755c, #596248);
+    box-shadow: 0 12px 28px rgba(87,97,74,.22);
+  }
+  .success {
+    display: none;
+    max-width: 680px;
+    margin: 24px auto 0;
+    padding: 16px 18px;
+    border-radius: 16px;
+    background: #eef3ea;
+    color: var(--olive-deep);
+    border: 1px solid rgba(87,97,74,.24);
+    line-height: 1.7;
+  }
+
+  footer {
+    margin-top: 68px;
+    padding: 66px 20px 88px;
+    text-align: center;
+    background: linear-gradient(180deg, #67705a, #525b46);
+    color: white;
+  }
+  footer .script {
+    font-family: "Noto Serif Armenian", serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 46px;
+    line-height: 1.1;
+    letter-spacing: .01em;
+    color: #f4efe4;
+    white-space: nowrap;
+  }
+  footer p { margin-top: 12px; color: rgba(255,255,255,.78); }
+
+  /* Animations */
+  @keyframes floralFloat {
+    0% { transform: scale(1.03) translateY(0px) translateX(0px) rotate(-0.3deg); }
+    35% { transform: scale(1.055) translateY(-13px) translateX(10px) rotate(0.7deg); }
+    70% { transform: scale(1.045) translateY(10px) translateX(-9px) rotate(-0.6deg); }
+    100% { transform: scale(1.06) translateY(-7px) translateX(7px) rotate(0.5deg); }
+  }
+  @keyframes softRise {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(4px); }
+  }
+  @keyframes ribbonWave1 {
+    0% { transform: rotate(-18deg) translateX(0) translateY(0) scaleX(1); }
+    50% { transform: rotate(-11deg) translateX(18px) translateY(-12px) scaleX(1.06); }
+    100% { transform: rotate(-22deg) translateX(-12px) translateY(9px) scaleX(.98); }
+  }
+  @keyframes ribbonWave2 {
+    0% { transform: rotate(64deg) translateX(0) translateY(0) scaleX(1); }
+    50% { transform: rotate(74deg) translateX(-16px) translateY(16px) scaleX(1.05); }
+    100% { transform: rotate(59deg) translateX(12px) translateY(-9px) scaleX(.98); }
+  }
+  @keyframes ribbonWave3 {
+    0% { transform: rotate(10deg) translateX(0) translateY(0) scaleX(1); }
+    50% { transform: rotate(4deg) translateX(20px) translateY(-13px) scaleX(1.06); }
+    100% { transform: rotate(15deg) translateX(-14px) translateY(8px) scaleX(.98); }
+  }
+  @keyframes leafSway {
+    0% { transform: rotate(-10deg) translate(0,0); }
+    25% { transform: rotate(7deg) translate(5px,-4px); }
+    50% { transform: rotate(15deg) translate(9px,-9px); }
+    75% { transform: rotate(3deg) translate(3px,-5px); }
+    100% { transform: rotate(-12deg) translate(-4px,2px); }
+  }
+  @keyframes petalDrift {
+    0% { transform: translate3d(0,0,0) rotate(0deg) scale(1); opacity:0; }
+    8% { opacity:.82; }
+    30% { transform: translate3d(30px,65px,0) rotate(110deg) scale(1.05); }
+    62% { transform: translate3d(-22px,145px,0) rotate(220deg) scale(.95); opacity:.72; }
+    100% { transform: translate3d(36px,250px,0) rotate(360deg) scale(1.03); opacity:0; }
+  }
+
+  @media (max-width: 720px) {
+    .event { grid-template-columns: 1fr; gap: 12px; }
+    .count-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      max-width: 100%;
+    }
+    .count-item { padding: 18px 6px; border-radius: 18px; }
+    .count-num { font-size: 36px; }
+    .count-label { font-size: 11px; }
+    .ribbon.r1 { width: 180px; left: 18px; top: 220px; }
+    .ribbon.r2 { width: 150px; right: 8px; top: 100px; }
+    .ribbon.r3 { width: 190px; left: 130px; bottom: 90px; }
+    .leaf.l5 { display:none; }
+  }
+  @media (max-width: 540px) {
+    .section { padding: 56px 0; }
+    .hero-art { min-height: 590px; }
+    .hero-content { padding: 165px 14px 82px; }
+    .intro-card { padding: 34px 18px; }
+    .open-title {
+      font-size: 27px;
+      transform: skewX(-2deg);
+    }
+    .env-names {
+      font-size: 26px;
+      white-space: nowrap;
+      letter-spacing: -.01em;
+    }
+    .invite-date-inline { font-size: 21px; }
+    .leaf { width: 14px; height: 34px; }
+    .petal { width: 12px; height: 16px; }
+    .hero-title-clean {
+      font-size: clamp(22px, 5.7vw, 30px);
+      white-space: nowrap;
+      letter-spacing: -.01em;
+      padding: 0 10px;
+      margin: 0 auto 14px;
+      max-width: calc(100% - 16px);
+      display: table;
+      transform: none;
+    }
+    .event-kind { font-size: 12px; }
+    .field label { font-size: 13px; }
+    .pill span {
+      font-size: 14px;
+      white-space: nowrap;
+      letter-spacing: -0.02em;
+      padding: 12px 8px;
+    }
+    .event h3 {
+      font-size: 20px;
+      white-space: normal;
+      line-height: 1.32;
+    }
+    .event p {
+      font-size: 16px;
+      white-space: nowrap;
+    }
+    footer .script {
+      font-size: 34px;
+      white-space: nowrap;
+      letter-spacing: -.01em;
+    }
+    .count-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+    .count-item {
+      padding: 14px 4px;
+      border-radius: 16px;
+    }
+    .count-num { font-size: 30px; }
+    .count-label { font-size: 10px; }
+  }
+
+  .hero-title-image {
+    display: block;
+    width: min(92%, 760px);
+    margin: 0 auto 10px;
+    filter:
+      drop-shadow(0 2px 4px rgba(255,255,255,.95))
+      drop-shadow(0 0 14px rgba(255,255,255,.82));
+  }
+
+
+  .hero-title-clean {
+    font-family: "Noto Serif Armenian", serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(36px, 6.2vw, 84px);
+    line-height: 1.08;
+    letter-spacing: 0;
+    color: #4f5d46;
+    text-align: center;
+    display: table;
+    width: auto;
+    max-width: calc(100% - 24px);
+    margin: 0 auto 14px;
+    padding: 0 12px;
+    text-shadow:
+      0 2px 4px rgba(255,255,255,.95),
+      0 0 14px rgba(255,255,255,.80);
+    transform: none;
+    white-space: nowrap;
+    overflow: visible;
+  }
+
+
+  /* Gentle elegant italic treatment */
+  body,
+  .title,
+  .invite-message,
+  .invite-date-inline,
+  .event-kind,
+  .event h3,
+  .event p,
+  .map-link,
+  .count-label,
+  .deadline,
+  .field label,
+  .pill span,
+  .submit-btn,
+  footer p,
+  .hero-date,
+  .eyebrow {
+    font-style: italic;
+  }
+
+  /* Keep numerals and countdown clean, not slanted */
+  .count-num,
+  .event-time,
+  input {
+    font-style: normal;
+  }
+
+  /* Very subtle visual slant for headings, without becoming decorative */
+  .title,
+  .event h3,
+  .hero-date,
+  .invite-date-inline,
+  .deadline {
+    transform: skewX(-1deg);
+  }
+
+
+
+  .music-toggle {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(176,138,85,.42);
+    background: rgba(255,249,240,.96);
+    color: var(--olive-deep);
+    box-shadow: 0 10px 24px rgba(72,56,33,.16);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 500;
+    font-size: 20px;
+    font-family: serif;
+    backdrop-filter: blur(6px);
+  }
+  .music-toggle.playing::after { content: "♪"; }
+  .music-toggle.paused::after { content: "▶"; font-size: 15px; }
+
+
+  /* Exact selected envelope design + old-style opening mechanism */
+  .overlay-wrap {
+    width: min(94vw, 820px);
+    text-align: center;
+  }
+
+  .envelope-exact {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1448 / 1086;
+    margin: 0 auto;
+    cursor: pointer;
+    perspective: 1800px;
+    filter: drop-shadow(0 22px 38px rgba(65,50,31,.16));
+    overflow: visible;
+  }
+
+  .env-closed-exact {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 10;
+    transition:
+      opacity .32s ease .18s,
+      transform .65s cubic-bezier(.22,.9,.2,1);
+    pointer-events: none;
+  }
+
+  .env-open-stage {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity .28s ease .18s;
+    pointer-events: none;
+  }
+
+  .env-open-back {
+    position: absolute;
+    left: 7.5%;
+    right: 7.5%;
+    top: 18%;
+    bottom: 10%;
+    border-radius: 10px;
+    background: linear-gradient(180deg,#eee0ca,#dfc7a5);
+    box-shadow: inset 0 0 0 1px rgba(163,119,62,.18);
+    z-index: 1;
+  }
+
+  /* Same selected artwork, clipped to its original flap */
+  .env-open-flap {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    clip-path: polygon(7.2% 13%, 92.8% 13%, 50% 61%);
+    transform-origin: 50% 13%;
+    transform: rotateX(0deg);
+    backface-visibility: hidden;
+    transition: transform 1.05s cubic-bezier(.22,.9,.2,1) .18s;
+  }
+
+  .env-paper {
+    position: absolute;
+    left: 15%;
+    right: 15%;
+    bottom: 18%;
+    height: 57%;
+    z-index: 3;
+    border-radius: 8px;
+    background:
+      radial-gradient(circle at 14% 16%, rgba(166,179,145,.16), transparent 20%),
+      radial-gradient(circle at 86% 18%, rgba(176,138,85,.12), transparent 21%),
+      linear-gradient(180deg,#fffdf8,#f8f0e4);
+    border: 1px solid rgba(176,138,85,.30);
+    box-shadow: 0 12px 30px rgba(75,56,31,.14);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10%;
+    transform: translateY(43%);
+    opacity: 0;
+    transition:
+      transform 1s cubic-bezier(.22,.9,.2,1) .45s,
+      opacity .55s ease .42s;
+  }
+
+  .env-paper::before,
+  .env-paper::after {
+    content:"";
+    position:absolute;
+    width:72px;
+    height:72px;
+    opacity:.55;
+    border-radius:50%;
+    background:
+      radial-gradient(circle at 34% 45%, rgba(255,255,255,.94) 0 14%, transparent 15%),
+      radial-gradient(circle at 56% 36%, rgba(255,255,255,.92) 0 13%, transparent 14%),
+      radial-gradient(circle at 58% 60%, rgba(255,255,255,.92) 0 15%, transparent 16%);
+  }
+  .env-paper::before { left:18px; top:14px; }
+  .env-paper::after { right:18px; top:14px; }
+
+  .env-paper-mini {
+    font-family:"Noto Serif Armenian",serif;
+    font-style:italic;
+    font-size:clamp(11px,1.4vw,15px);
+    letter-spacing:.08em;
+    color:#8b6c3b;
+    margin-bottom:12px;
+  }
+
+  .env-paper-names {
+    font-family:"Noto Serif Armenian",serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(25px,4.1vw,46px);
+    color:#4f5d46;
+    white-space:nowrap;
+    line-height:1.05;
+    text-align:center;
+    text-shadow:0 2px 8px rgba(255,255,255,.8);
+  }
+
+  .env-paper-date {
+    margin-top:10px;
+    font-family:"Noto Serif Armenian",serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(13px,1.8vw,19px);
+    color:#85683c;
+  }
+
+  /* Front of the same selected envelope image stays in front of the paper */
+  .env-front-exact {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    clip-path: polygon(7.2% 49%, 50% 72%, 92.8% 49%, 92.8% 88%, 7.2% 88%);
+  }
+
+  .envelope-exact.open .env-closed-exact {
+    opacity: 0;
+    transform: translateY(3px) scale(.997);
+  }
+  .envelope-exact.open .env-open-stage {
+    opacity: 1;
+  }
+  .envelope-exact.open .env-open-flap {
+    transform: rotateX(-178deg);
+  }
+  .envelope-exact.open .env-paper {
+    transform: translateY(-8%);
+    opacity: 1;
+  }
+
+  @media (max-width:540px) {
+    .overlay-wrap { width:min(96vw,560px); }
+    .env-paper {
+      left:14%;
+      right:14%;
+      height:58%;
+      padding-top:12%;
+    }
+    .env-paper-names {
+      font-size:clamp(21px,6.3vw,31px);
+    }
+    .env-paper-date {
+      font-size:clamp(12px,3.3vw,17px);
+    }
+  }
+
+
+  .field-error {
+    display: none;
+    margin-top: 8px;
+    font-family: "Noto Serif Armenian", serif;
+    font-style: italic;
+    font-size: 14px;
+    color: #8a5f55;
+    line-height: 1.35;
+  }
+  .field-error.show { display: block; }
+
+</style>
+</head>
+<body>
+
+<div class="overlay" id="coverOverlay">
+  <div class="overlay-wrap">
+    
+    <div class="envelope envelope-exact" id="envelope">
+      <img class="env-closed-exact" src="assets/asset2.png" alt="Ծրար">
+
+      <div class="env-open-stage" aria-hidden="true">
+        <div class="env-open-back"></div>
+
+        <div class="env-open-flap"
+             style="background-image:url('assets/asset2.png')"></div>
+
+        <div class="env-paper">
+          <div class="env-paper-mini">Հարսանյաց հրավեր</div>
+          <div class="env-paper-names">Վահե և Անժելա</div>
+          <div class="env-paper-date">19 նոյեմբերի 2026</div>
+        </div>
+
+        <div class="env-front-exact"
+             style="background-image:url('assets/asset2.png')"></div>
+      </div>
+    </div>
+    <div class="open-title">Բացել հրավերը</div>
+  </div>
+</div>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <div class="hero-art">
+          <div class="hero-bg"></div>
+
+          <div class="ribbon r1"></div>
+          <div class="ribbon r2"></div>
+          <div class="ribbon r3"></div>
+
+          <div class="leaf l1"></div>
+          <div class="leaf l2"></div>
+          <div class="leaf l3"></div>
+          <div class="leaf l4"></div>
+          <div class="leaf l5"></div>
+
+          <div class="petal p1"></div>
+          <div class="petal p2"></div>
+          <div class="petal p3"></div>
+          <div class="petal p4"></div>
+          <div class="petal p5"></div>
+          <div class="petal p6"></div>
+
+          <div class="hero-content">
+            <div class="eyebrow">Հարսանյաց հրավեր</div>
+            <div class="hero-title-clean">Վահե և Անժելա</div>
+            <div class="hero-date">19 նոյեմբերի 2026</div>
+            <a class="hero-btn" href="#inviteText">Բացել հրավերի բովանդակությունը ↓</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card intro-card" id="inviteText">
+        <h2 class="title">Սիրելի հյուրեր</h2>
+        <div class="orn"></div>
+        <div class="invite-message">
+          <strong>Սիրով հրավիրում ենք Ձեզ կիսելու մեզ հետ մեր կյանքի<br>կարևոր և հիշարժան օրը։</strong><br>
+          Սպասում ենք Ձեզ մեր հարսանիքին։
+          <div class="invite-date-inline">19 նոյեմբերի 2026</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="eyebrow">19 Նոյեմբեր 2026</div>
+      <h2 class="title">Օրվա ծրագիրը</h2>
+
+      <div class="timeline">
+        <article class="event">
+          <div class="event-time">14:00</div>
+          <div>
+            <div class="event-kind">Պսակադրություն</div>
+            <h3>Սուրբ Գայանե եկեղեցի</h3>
+            <p>ք. Էջմիածին</p>
+            <a class="map-link" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Saint+Gayane+Church+Vagharshapat+Armenia">Ինչպես հասնել ↗</a>
+          </div>
+        </article>
+
+        <article class="event">
+          <div class="event-time">17:30</div>
+          <div>
+            <div class="event-kind">Հարսանյաց հանդիսություն</div>
+            <h3>«Նոր Դվին» Rhodes Music Hall / by Nor Dvin</h3>
+            <p>ք. Էջմիածին, Աշտարակի խճուղի 1/1</p>
+            <a class="map-link" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Rhodes+Nor+Dvin+Ashtarak+Highway+1%2F1+Vagharshapat+Armenia">Ինչպես հասնել ↗</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="title">Հարսանիքին մնաց</h2>
+
+      <div class="count-grid">
+        <div class="count-item">
+          <div class="count-num" id="days">00</div>
+          <div class="count-label">օր</div>
+        </div>
+        <div class="count-item">
+          <div class="count-num" id="hours">00</div>
+          <div class="count-label">ժամ</div>
+        </div>
+        <div class="count-item">
+          <div class="count-num" id="minutes">00</div>
+          <div class="count-label">րոպե</div>
+        </div>
+        <div class="count-item">
+          <div class="count-num" id="seconds">00</div>
+          <div class="count-label">վայրկյան</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="card rsvp-card">
+        <div class="deadline"><strong>Խնդրում ենք հաստատել Ձեր ներկայությունը մինչև 09.11.2026</strong></div>
+
+        <iframe name="rsvpHiddenFrame" id="rsvpHiddenFrame" style="display:none;"></iframe>
+        <form id="rsvpForm" novalidate>
+          <input type="hidden" name="entry.1944953914" id="gfSide">
+          <input type="hidden" name="entry.170618005" id="gfName">
+          <input type="hidden" name="entry.1194964298" id="gfAttendance">
+          <input type="hidden" name="entry.114006231" id="gfGuests">
+          <div class="form-grid">
+            <div class="field">
+              <label>Ում կողմից եք հրավիրված</label>
+              <div class="vertical-choice">
+                <label class="pill">
+                  <input type="radio" name="side" value="Փեսայի կողմից">
+                  <span>Փեսայի կողմից</span>
+                </label>
+                <label class="pill">
+                  <input type="radio" name="side" value="Հարսի կողմից">
+                  <span>Հարսի կողմից</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Անուն Ազգանուն</label>
+              <input type="text" id="guestName"><div class="field-error" id="guestNameError">Խնդրում ենք լրացնել այս դաշտը։</div>
+            </div>
+
+            <div class="field">
+              <label>Մասնակցության պատասխանը</label>
+              <div class="vertical-choice">
+                <label class="pill">
+                  <input type="radio" name="attendance" value="Սիրով, կմասնակցեմ">
+                  <span>Սիրով, կմասնակցեմ</span>
+                </label>
+                <label class="pill">
+                  <input type="radio" name="attendance" value="Ցավոք, չեմ կարող ներկա լինել">
+                  <span>Ցավոք, չեմ կարող ներկա լինել</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Հյուրերի ընդհանուր քանակը</label>
+              <input type="number" id="guestCount"><div class="field-error" id="guestCountError">Խնդրում ենք լրացնել այս դաշտը։</div>
+            </div>
+
+            <button type="submit" class="submit-btn">Ուղարկել պատասխանը</button>
+          </div>
+        </form>
+
+        <div class="success" id="successMessage">
+          Շնորհակալություն։ Ձեր պատասխանը հաջողությամբ ուղարկվել է։
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="eyebrow" style="color:#ddc7a4;">Սիրով</div>
+    <div class="script">Վահե և Անժելա</div>
+    <p>19 նոյեմբերի 2026 • Հայաստան</p>
+  </footer>
+</main>
+
+
+<button class="music-toggle paused" id="musicToggle" aria-label="Երաժշտություն"></button>
+<audio id="weddingMusic" preload="auto" loop playsinline>
+  <source src="assets/asset3.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const envelope = document.getElementById('envelope');
+  const overlay = document.getElementById('coverOverlay');
+
+  const weddingMusic = document.getElementById('weddingMusic');
+  const musicToggle = document.getElementById('musicToggle');
+  let musicPlaying = false;
+
+  async function startWeddingMusic() {
+    try {
+      weddingMusic.currentTime = 0;
+      weddingMusic.volume = 0.01;
+      await weddingMusic.play();
+      musicPlaying = true;
+      musicToggle.style.display = 'flex';
+      musicToggle.classList.remove('paused');
+      musicToggle.classList.add('playing');
+
+      let vol = 0.01;
+      const target = 0.5;
+      const fade = setInterval(() => {
+        vol = Math.min(vol + 0.03, target);
+        weddingMusic.volume = vol;
+        if (vol >= target) clearInterval(fade);
+      }, 80);
+    } catch (err) {
+      musicToggle.style.display = 'flex';
+      musicToggle.classList.remove('playing');
+      musicToggle.classList.add('paused');
+    }
+  }
+
+  musicToggle.addEventListener('click', async () => {
+    if (musicPlaying) {
+      weddingMusic.pause();
+      musicPlaying = false;
+      musicToggle.classList.remove('playing');
+      musicToggle.classList.add('paused');
+    } else {
+      try {
+        await weddingMusic.play();
+        musicPlaying = true;
+        musicToggle.classList.remove('paused');
+        musicToggle.classList.add('playing');
+      } catch (err) {}
+    }
+  });
+
+  envelope.addEventListener('click', () => {
+    envelope.classList.add('open');
+    startWeddingMusic();
+    setTimeout(() => {
+      overlay.classList.add('hidden');
+    }, 2450);
+  });
+
+  const targetDate = new Date('2026-11-19T14:00:00+04:00').getTime();
+  function updateCountdown() {
+    const now = Date.now();
+    const diff = Math.max(targetDate - now, 0);
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('days').textContent = String(days).padStart(2, '0');
+    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  
+</script>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('rsvpForm');
+  const guestCount = document.getElementById('guestCount');
+  const guestField = guestCount ? guestCount.closest('.field') : null;
+  const successMessage = document.getElementById('successMessage');
+
+  function updateGuestState() {
+    const selected = document.querySelector('input[name="attendance"]:checked');
+    const declining = !!(selected && selected.value.includes('Ցավոք'));
+
+    if (!guestCount) return;
+
+    if (declining) {
+      guestCount.value = '';
+      guestCount.required = false;
+      guestCount.setCustomValidity('');
+      if (guestField) guestField.style.opacity = '0.55';
+    } else {
+      guestCount.required = false;
+      guestCount.setCustomValidity('');
+      if (guestField) guestField.style.opacity = '1';
+    }
+  }
+
+  document.querySelectorAll('input[name="attendance"]').forEach(radio => {
+    radio.addEventListener('change', updateGuestState);
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const side = document.querySelector('input[name="side"]:checked')?.value || '';
+    const name = document.getElementById('guestName').value.trim();
+    const attendance = document.querySelector('input[name="attendance"]:checked')?.value || '';
+    const declining = attendance.includes('Ցավոք');
+    const guests = guestCount ? guestCount.value.trim() : '';
+
+    const sideError = document.getElementById('sideError');
+    const guestNameError = document.getElementById('guestNameError');
+    const attendanceError = document.getElementById('attendanceError');
+    const guestCountError = document.getElementById('guestCountError');
+
+    [sideError, guestNameError, attendanceError, guestCountError].forEach(el => {
+      if (el) el.classList.remove('show');
+    });
+
+    if (!side) {
+      if (sideError) sideError.classList.add('show');
+      return;
+    }
+    if (!name) {
+      if (guestNameError) guestNameError.classList.add('show');
+      document.getElementById('guestName').focus();
+      return;
+    }
+    if (!attendance) {
+      if (attendanceError) attendanceError.classList.add('show');
+      return;
+    }
+    if (!declining && !guests) {
+      if (guestCountError) guestCountError.classList.add('show');
+      guestCount.focus();
+      return;
+    }
+
+    const payload = new URLSearchParams();
+    payload.append('entry.1944953914', side);
+    payload.append('entry.170618005', name);
+
+    // Google Form's published choice values:
+    payload.append(
+      'entry.1194964298',
+      declining ? 'Ցավոք, չեմ կարող ներկա լինել' : 'Սիրով, կմասնակցեմ'
+    );
+
+    // When declining, do not send the guest-count field at all.
+    // The Google Form question is optional, so the Sheet cell stays blank.
+    if (!declining) {
+      payload.append('entry.114006231', guests);
+    }
+
+    try {
+      await fetch(
+        'https://docs.google.com/forms/d/e/1FAIpQLSfzogQhfgUBGnlIwnZ0HwGArVhrVQ0rawUaHfPT2jgD5OsFmA/formResponse',
+        {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+          body: payload.toString()
+        }
+      );
+
+      localStorage.setItem('vaheAnzhelaRSVP_v12', JSON.stringify({
+        side, name, attendance,
+        totalGuests: declining ? '' : guests,
+        savedAt: new Date().toISOString()
+      }));
+
+      if (successMessage) {
+        successMessage.style.display = 'block';
+      }
+    } catch (err) {
+      alert('Պատասխանը չհաջողվեց ուղարկել։ Խնդրում ենք կրկին փորձել։');
+    }
+  });
+
+  updateGuestState();
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const hide = id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.remove('show');
+  };
+
+  document.querySelectorAll('input[name="side"]').forEach(el => {
+    el.addEventListener('change', () => hide('sideError'));
+  });
+
+  const guestName = document.getElementById('guestName');
+  if (guestName) guestName.addEventListener('input', () => hide('guestNameError'));
+
+  document.querySelectorAll('input[name="attendance"]').forEach(el => {
+    el.addEventListener('change', () => hide('attendanceError'));
+  });
+
+  const guestCount = document.getElementById('guestCount');
+  if (guestCount) guestCount.addEventListener('input', () => hide('guestCountError'));
+});
+</script>
+
+</body>
+</html>
