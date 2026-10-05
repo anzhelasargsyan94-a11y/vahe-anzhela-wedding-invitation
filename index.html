@@ -997,6 +997,47 @@
   }
   .field-error.show { display: block; }
 
+
+/* ===== Samsung Internet forced-dark workaround ===== */
+html.samsung-force-light,
+html.samsung-force-light body {
+  color-scheme: light only !important;
+  forced-color-adjust: none !important;
+}
+
+/*
+  Samsung Internet can still auto-darken a page even when color-scheme says light.
+  When Samsung Internet + a dark system preference are detected, invert the page
+  back toward its intended light palette. Media/background assets are double-inverted
+  so photographs and decorative images keep their original appearance.
+*/
+@media (prefers-color-scheme: dark) {
+  html.samsung-force-light {
+    background: #f5efe4 !important;
+    filter: invert(1) hue-rotate(180deg) !important;
+  }
+
+  html.samsung-force-light img,
+  html.samsung-force-light video,
+  html.samsung-force-light canvas,
+  html.samsung-force-light svg,
+  html.samsung-force-light picture,
+  html.samsung-force-light iframe,
+  html.samsung-force-light .seal {
+    filter: invert(1) hue-rotate(180deg) !important;
+  }
+
+  html.samsung-force-light body {
+    background-color: #f5efe4 !important;
+  }
+
+  html.samsung-force-light .card,
+  html.samsung-force-light .overlay,
+  html.samsung-force-light .env-inner {
+    forced-color-adjust: none !important;
+  }
+}
+
 </style>
 </head>
 <body>
