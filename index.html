@@ -1008,7 +1008,41 @@
     forced-color-adjust: none;
   }
 
+
+  /* Samsung Internet hard light-mode countermeasure.
+     Applied only on Samsung Browser when the device/browser reports dark mode. */
+  @media (prefers-color-scheme: dark) {
+    html.is-samsung-browser {
+      background: #f5efe4 !important;
+      filter: invert(1) hue-rotate(180deg) !important;
+      -webkit-filter: invert(1) hue-rotate(180deg) !important;
+    }
+
+    /* Restore raster/media assets after the page-level inversion. */
+    html.is-samsung-browser img,
+    html.is-samsung-browser picture,
+    html.is-samsung-browser video,
+    html.is-samsung-browser canvas,
+    html.is-samsung-browser iframe,
+    html.is-samsung-browser svg,
+    html.is-samsung-browser .seal {
+      filter: invert(1) hue-rotate(180deg) !important;
+      -webkit-filter: invert(1) hue-rotate(180deg) !important;
+    }
+  }
+
 </style>
+
+<script>
+(function () {
+  try {
+    if (/SamsungBrowser/i.test(navigator.userAgent || "")) {
+      document.documentElement.classList.add("is-samsung-browser");
+    }
+  } catch (e) {}
+})();
+</script>
+
 </head>
 <body>
 
